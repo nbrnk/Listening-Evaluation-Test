@@ -1,0 +1,1326 @@
+
+<!DOCTYPE html>
+<!-- ， on Web -->
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Listening Evaluation Test</title>
+  <link rel="stylesheet" href="css/style.css">
+ </head>
+ <body>
+<!-- ,  -->
+<h1><center>受聴評価実験</center></h1>
+音源1(ドラム音)と音源2(音源1に合うように、人工的に合成したボーカルパーカッション)を聴き、以下の3つを評価してください。2つの音源を再生終了するとボタンが選択できるようになります。音源は聴き直しても構いません。<br>
+    <table>
+        <tr>
+            <td>
+                ①<b>リズムの忠実性</b>について、音源1を基準とした時、音源2ではリズムが変わってしまっていないか？
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ②<b>音色の忠実性</b>について、バスドラムはボーカルパーカッションのバスドラム、スネアドラムはボーカルパーカッションのスネアドラム、という具合に、音源2で楽器が正しく対応しているか？
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ③<b>ボーカルパーカッションらしさ</b>について、音源2はドラム音に近いでしょうか、それとも、人間による本物のボーカルパーカッションに近いでしょうか？
+        </tr>
+    </table>
+    "なし"や"ドラムに近い"を選択した場合は、"なし"や"ドラムに近い"と感じた箇所や理由を自由記述欄に書いてください。
+
+<hr>
+<div align="center" id="ref"></div>
+
+<!-- Page 1 -->
+<div id="page1">
+<table>
+    <tr>
+      <td><center>音源1</center></td>
+      <td><center>音源2</center></td>
+    </tr>
+    <tr>
+      <td><audio id="audio1_1"controls>
+        <source src="drums/beat01.wav" type="audio/wav">
+    
+        Your browser does not support the audio element.
+      </audio></td>
+      <td><audio id="audio1_2"controls>
+        <source src="v2/beat01.wav" type="audio/wav">
+        Your browser does not support the audio element.
+      </audio></td>
+    </tr>
+  </table><br>
+
+<form id="surveyForm">
+    <fieldset id="question1"disabled>
+        <!-- [1]  -->
+        <b>①リズムの忠実性</b><br>
+        <input type="radio" name="q1" value=1>あり
+        <input type="radio" name="q1" value=0>なし
+        <br>
+        <textarea  name="text1_1" placeholder="自由記述欄（リズムの忠実性について）" rows="3" cols="100"></textarea><br><br>
+        
+        <!-- [2]  -->
+        <b>②音色の忠実性</b><br>
+        <input type="radio" name="q2" value=1>あり
+        <input type="radio" name="q2" value=0>なし
+        <br>
+        <textarea  name="text1_2" placeholder="自由記述欄（音色の忠実性について）" rows="3" cols="100"></textarea><br><br>
+
+        <!-- [3]  -->
+        <b>③ボーカルパーカッションらしさ</b><br>
+        <input type="radio" name="q3" value=1>ボーカルパーカッションに近い
+        <input type="radio" name="q3" value=0>ドラムに近い
+        <br>
+        <textarea  name="text1_3" placeholder="自由記述欄（ボーカルパーカッションらしさについて）" rows="3" cols="100"></textarea><br>
+    </fieldset><br>
+    <div class="button">
+        <a type="button" id="nextPage1">次へ</a> <br>
+        <!-- <a type="button" onclick="submitForm()">送信</a> <br> -->
+    </div>
+
+
+</div>
+  
+  <!-- Page 2 (同様の構造) -->
+<div id="page2" style="display:none;">
+    <table>
+        <tr>
+          <td><center>音源1</center></td>
+          <td><center>音源2</center></td>
+        </tr>
+        <tr>
+          <td><audio id="audio2_1"controls>
+            <source src="drums/beat02.wav" type="audio/wav">
+        
+            Your browser does not support the audio element.
+          </audio></td>
+          <td><audio id="audio2_2"controls>
+            <source src="v2/beat02.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio></td>
+        </tr>
+      </table><br>
+    
+        <fieldset id="question2"disabled>
+            <!-- [1]  -->
+            <b>①リズムの忠実性</b><br>
+            <input type="radio" name="q1" value=1>あり
+            <input type="radio" name="q1" value=0>なし
+            <br>
+            <textarea  name="text2_1" placeholder="自由記述欄（リズムの忠実性について）" rows="3" cols="100"></textarea><br><br>
+            
+            <!-- [2]  -->
+            <b>②音色の忠実性</b><br>
+            <input type="radio" name="q2" value=1>あり
+            <input type="radio" name="q2" value=0>なし
+            <br>
+            <textarea  name="text2_2" placeholder="自由記述欄（音色の忠実性について）" rows="3" cols="100"></textarea><br><br>
+    
+            <!-- [3]  -->
+            <b>③ボーカルパーカッションらしさ</b><br>
+            <input type="radio" name="q3" value=1>ボーカルパーカッションに近い
+            <input type="radio" name="q3" value=0>ドラムに近い
+            <br>
+            <textarea  name="text2_3" placeholder="自由記述欄（ボーカルパーカッションらしさについて）" rows="3" cols="100"></textarea><br>
+        </fieldset><br>
+        <div class="button">
+            <a type="button" id="nextPage2">次へ</a> <br>
+        </div>
+
+
+  </div>
+  
+  <!-- Page 3 (同様の構造) -->
+  <div id="page3" style="display:none;">
+    <table>
+        <tr>
+          <td><center>音源1</center></td>
+          <td><center>音源2</center></td>
+        </tr>
+        <tr>
+          <td><audio id="audio3_1"controls>
+            <source src="drums/beat03.wav" type="audio/wav">
+        
+            Your browser does not support the audio element.
+          </audio></td>
+          <td><audio id="audio3_2"controls>
+            <source src="v2/beat03.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio></td>
+        </tr>
+      </table><br>
+    
+        <fieldset id="question3"disabled>
+            <!-- [1]  -->
+            <b>①リズムの忠実性</b><br>
+            <input type="radio" name="q1" value=1>あり
+            <input type="radio" name="q1" value=0>なし
+            <br>
+            <textarea  name="text3_1" placeholder="自由記述欄（リズムの忠実性について）" rows="3" cols="100"></textarea><br><br>
+            
+            <!-- [2]  -->
+            <b>②音色の忠実性</b><br>
+            <input type="radio" name="q2" value=1>あり
+            <input type="radio" name="q2" value=0>なし
+            <br>
+            <textarea  name="text3_2" placeholder="自由記述欄（音色の忠実性について）" rows="3" cols="100"></textarea><br><br>
+    
+            <!-- [3]  -->
+            <b>③ボーカルパーカッションらしさ</b><br>
+            <input type="radio" name="q3" value=1>ボーカルパーカッションに近い
+            <input type="radio" name="q3" value=0>ドラムに近い
+            <br>
+            <textarea  name="text3_3" placeholder="自由記述欄（ボーカルパーカッションらしさについて）" rows="3" cols="100"></textarea><br>
+        </fieldset><br>
+        <div class="button">
+            <a type="button" id="nextPage3">次へ</a> <br>
+        </div>
+
+  </div>
+ 
+  <!-- Page 4 (同様の構造) -->
+  <div id="page4" style="display:none;">
+    <table>
+        <tr>
+          <td><center>音源1</center></td>
+          <td><center>音源2</center></td>
+        </tr>
+        <tr>
+          <td><audio id="audio4_1"controls>
+            <source src="drums/beat01_160.wav" type="audio/wav">
+        
+            Your browser does not support the audio element.
+          </audio></td>
+          <td><audio id="audio4_2"controls>
+            <source src="v2/beat01_160.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio></td>
+        </tr>
+      </table><br>
+    
+        <fieldset id="question4"disabled>
+            <!-- [1]  -->
+            <b>①リズムの忠実性</b><br>
+            <input type="radio" name="q1" value=1>あり
+            <input type="radio" name="q1" value=0>なし
+            <br>
+            <textarea  name="text4_1" placeholder="自由記述欄（リズムの忠実性について）" rows="3" cols="100"></textarea><br><br>
+            
+            <!-- [2]  -->
+            <b>②音色の忠実性</b><br>
+            <input type="radio" name="q2" value=1>あり
+            <input type="radio" name="q2" value=0>なし
+            <br>
+            <textarea  name="text4_2" placeholder="自由記述欄（音色の忠実性について）" rows="3" cols="100"></textarea><br><br>
+    
+            <!-- [3]  -->
+            <b>③ボーカルパーカッションらしさ</b><br>
+            <input type="radio" name="q3" value=1>ボーカルパーカッションに近い
+            <input type="radio" name="q3" value=0>ドラムに近い
+            <br>
+            <textarea  name="text4_3" placeholder="自由記述欄（ボーカルパーカッションらしさについて）" rows="3" cols="100"></textarea><br>
+        </fieldset><br>
+        <div class="button">
+            <a type="button" id="nextPage4">次へ</a> <br>
+        </div>
+
+  </div>
+
+  <!-- Page 5 (同様の構造) -->
+  <div id="page5" style="display:none;">
+    <table>
+        <tr>
+          <td><center>音源1</center></td>
+          <td><center>音源2</center></td>
+        </tr>
+        <tr>
+          <td><audio id="audio5_1"controls>
+            <source src="drums/beat02_160.wav" type="audio/wav">
+        
+            Your browser does not support the audio element.
+          </audio></td>
+          <td><audio id="audio5_2"controls>
+            <source src="v2/beat02_160.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio></td>
+        </tr>
+      </table><br>
+    
+        <fieldset id="question5"disabled>
+            <!-- [1]  -->
+            <b>①リズムの忠実性</b><br>
+            <input type="radio" name="q1" value=1>あり
+            <input type="radio" name="q1" value=0>なし
+            <br>
+            <textarea  name="text5_1" placeholder="自由記述欄（リズムの忠実性について）" rows="3" cols="100"></textarea><br><br>
+            
+            <!-- [2]  -->
+            <b>②音色の忠実性</b><br>
+            <input type="radio" name="q2" value=1>あり
+            <input type="radio" name="q2" value=0>なし
+            <br>
+            <textarea  name="text5_2" placeholder="自由記述欄（音色の忠実性について）" rows="3" cols="100"></textarea><br><br>
+    
+            <!-- [3]  -->
+            <b>③ボーカルパーカッションらしさ</b><br>
+            <input type="radio" name="q3" value=1>ボーカルパーカッションに近い
+            <input type="radio" name="q3" value=0>ドラムに近い
+            <br>
+            <textarea  name="text5_3" placeholder="自由記述欄（ボーカルパーカッションらしさについて）" rows="3" cols="100"></textarea><br>
+        </fieldset><br>
+        <div class="button">
+            <a type="button" id="nextPage5">次へ</a> <br>
+        </div>
+  </div>
+
+  <!-- Page 6 (同様の構造) -->
+  <div id="page6" style="display:none;">
+    <table>
+        <tr>
+          <td><center>音源1</center></td>
+          <td><center>音源2</center></td>
+        </tr>
+        <tr>
+          <td><audio id="audio6_1"controls>
+            <source src="drums/beat03_160.wav" type="audio/wav">
+        
+            Your browser does not support the audio element.
+          </audio></td>
+          <td><audio id="audio6_2"controls>
+            <source src="v2/beat03_160.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio></td>
+        </tr>
+      </table><br>
+    
+        <fieldset id="question6"disabled>
+            <!-- [1]  -->
+            <b>①リズムの忠実性</b><br>
+            <input type="radio" name="q1" value=1>あり
+            <input type="radio" name="q1" value=0>なし
+            <br>
+            <textarea  name="text6_1" placeholder="自由記述欄（リズムの忠実性について）" rows="3" cols="100"></textarea><br><br>
+            
+            <!-- [2]  -->
+            <b>②音色の忠実性</b><br>
+            <input type="radio" name="q2" value=1>あり
+            <input type="radio" name="q2" value=0>なし
+            <br>
+            <textarea  name="text6_2" placeholder="自由記述欄（音色の忠実性について）" rows="3" cols="100"></textarea><br><br>
+    
+            <!-- [3]  -->
+            <b>③ボーカルパーカッションらしさ</b><br>
+            <input type="radio" name="q3" value=1>ボーカルパーカッションに近い
+            <input type="radio" name="q3" value=0>ドラムに近い
+            <br>
+            <textarea  name="text6_3" placeholder="自由記述欄（ボーカルパーカッションらしさについて）" rows="3" cols="100"></textarea><br>
+        </fieldset><br>
+        <div class="button">
+            <a type="button" id="nextPage6">次へ</a> <br>
+        </div>
+  </div>
+
+  <!-- Page 7 (同様の構造) -->
+  <div id="page7" style="display:none;">
+    <table>
+        <tr>
+          <td><center>音源1</center></td>
+          <td><center>音源2</center></td>
+        </tr>
+        <tr>
+          <td><audio id="audio7_1"controls>
+            <source src="drums/beat01_80.wav" type="audio/wav">
+        
+            Your browser does not support the audio element.
+          </audio></td>
+          <td><audio id="audio7_2"controls>
+            <source src="v2/beat01_80.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio></td>
+        </tr>
+      </table><br>
+    
+        <fieldset id="question7"disabled>
+            <!-- [1]  -->
+            <b>①リズムの忠実性</b><br>
+            <input type="radio" name="q1" value=1>あり
+            <input type="radio" name="q1" value=0>なし
+            <br>
+            <textarea  name="text7_1" placeholder="自由記述欄（リズムの忠実性について）" rows="3" cols="100"></textarea><br><br>
+            
+            <!-- [2]  -->
+            <b>②音色の忠実性</b><br>
+            <input type="radio" name="q2" value=1>あり
+            <input type="radio" name="q2" value=0>なし
+            <br>
+            <textarea  name="text7_2" placeholder="自由記述欄（音色の忠実性について）" rows="3" cols="100"></textarea><br><br>
+    
+            <!-- [3]  -->
+            <b>③ボーカルパーカッションらしさ</b><br>
+            <input type="radio" name="q3" value=1>ボーカルパーカッションに近い
+            <input type="radio" name="q3" value=0>ドラムに近い
+            <br>
+            <textarea  name="text7_3" placeholder="自由記述欄（ボーカルパーカッションらしさについて）" rows="3" cols="100"></textarea><br>
+        </fieldset><br>
+        <div class="button">
+            <a type="button" id="nextPage7">次へ</a> <br>
+        </div>
+  </div>
+
+  <!-- Page 8 (同様の構造) -->
+  <div id="page8" style="display:none;">
+    <table>
+        <tr>
+          <td><center>音源1</center></td>
+          <td><center>音源2</center></td>
+        </tr>
+        <tr>
+          <td><audio id="audio8_1"controls>
+            <source src="drums/beat02_80.wav" type="audio/wav">
+        
+            Your browser does not support the audio element.
+          </audio></td>
+          <td><audio id="audio8_2"controls>
+            <source src="v2/beat02_80.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio></td>
+        </tr>
+      </table><br>
+    
+        <fieldset id="question8"disabled>
+            <!-- [1]  -->
+            <b>①リズムの忠実性</b><br>
+            <input type="radio" name="q1" value=1>あり
+            <input type="radio" name="q1" value=0>なし
+            <br>
+            <textarea  name="text8_1" placeholder="自由記述欄（リズムの忠実性について）" rows="3" cols="100"></textarea><br><br>
+            
+            <!-- [2]  -->
+            <b>②音色の忠実性</b><br>
+            <input type="radio" name="q2" value=1>あり
+            <input type="radio" name="q2" value=0>なし
+            <br>
+            <textarea  name="text8_2" placeholder="自由記述欄（音色の忠実性について）" rows="3" cols="100"></textarea><br><br>
+    
+            <!-- [3]  -->
+            <b>③ボーカルパーカッションらしさ</b><br>
+            <input type="radio" name="q3" value=1>ボーカルパーカッションに近い
+            <input type="radio" name="q3" value=0>ドラムに近い
+            <br>
+            <textarea  name="text8_3" placeholder="自由記述欄（ボーカルパーカッションらしさについて）" rows="3" cols="100"></textarea><br>
+        </fieldset><br>
+        <div class="button">
+            <a type="button" id="nextPage8">次へ</a> <br>
+        </div>
+  </div>
+
+  <!-- Page 9 (同様の構造) -->
+  <div id="page9" style="display:none;">
+    <table>
+        <tr>
+          <td><center>音源1</center></td>
+          <td><center>音源2</center></td>
+        </tr>
+        <tr>
+          <td><audio id="audio9_1"controls>
+            <source src="drums/beat03_80.wav" type="audio/wav">
+        
+            Your browser does not support the audio element.
+          </audio></td>
+          <td><audio id="audio9_2"controls>
+            <source src="v2/beat03_80.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio></td>
+        </tr>
+      </table><br>
+    
+        <fieldset id="question9"disabled>
+            <!-- [1]  -->
+            <b>①リズムの忠実性</b><br>
+            <input type="radio" name="q1" value=1>あり
+            <input type="radio" name="q1" value=0>なし
+            <br>
+            <textarea  name="text9_1" placeholder="自由記述欄（リズムの忠実性について）" rows="3" cols="100"></textarea><br><br>
+            
+            <!-- [2]  -->
+            <b>②音色の忠実性</b><br>
+            <input type="radio" name="q2" value=1>あり
+            <input type="radio" name="q2" value=0>なし
+            <br>
+            <textarea  name="text9_2" placeholder="自由記述欄（音色の忠実性について）" rows="3" cols="100"></textarea><br><br>
+    
+            <!-- [3]  -->
+            <b>③ボーカルパーカッションらしさ</b><br>
+            <input type="radio" name="q3" value=1>ボーカルパーカッションに近い
+            <input type="radio" name="q3" value=0>ドラムに近い
+            <br>
+            <textarea  name="text9_3" placeholder="自由記述欄（ボーカルパーカッションらしさについて）" rows="3" cols="100"></textarea><br>
+        </fieldset><br>
+        <div class="button">
+            <a type="button" id="nextPage9">次へ</a> <br>
+        </div>
+  </div>
+
+  <!-- Page 10 (同様の構造) -->
+  <div id="page10" style="display:none;">
+    <table>
+        <tr>
+          <td><center>音源1</center></td>
+          <td><center>音源2</center></td>
+        </tr>
+        <tr>
+          <td><audio id="audio10_1"controls>
+            <source src="drums/beat01.wav" type="audio/wav">
+        
+            Your browser does not support the audio element.
+          </audio></td>
+          <td><audio id="audio10_2"controls>
+            <source src="VQ/beat01.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio></td>
+        </tr>
+      </table><br>
+    
+        <fieldset id="question10"disabled>
+            <!-- [1]  -->
+            <b>①リズムの忠実性</b><br>
+            <input type="radio" name="q1" value=1>あり
+            <input type="radio" name="q1" value=0>なし
+            <br>
+            <textarea  name="text10_1" placeholder="自由記述欄（リズムの忠実性について）" rows="3" cols="100"></textarea><br><br>
+            
+            <!-- [2]  -->
+            <b>②音色の忠実性</b><br>
+            <input type="radio" name="q2" value=1>あり
+            <input type="radio" name="q2" value=0>なし
+            <br>
+            <textarea  name="text10_2" placeholder="自由記述欄（音色の忠実性について）" rows="3" cols="100"></textarea><br><br>
+    
+            <!-- [3]  -->
+            <b>③ボーカルパーカッションらしさ</b><br>
+            <input type="radio" name="q3" value=1>ボーカルパーカッションに近い
+            <input type="radio" name="q3" value=0>ドラムに近い
+            <br>
+            <textarea  name="text10_3" placeholder="自由記述欄（ボーカルパーカッションらしさについて）" rows="3" cols="100"></textarea><br>
+        </fieldset><br>
+        <div class="button">
+            <a type="button" id="nextPage10">次へ</a> <br>
+        </div>
+  </div>
+
+  <!-- Page 11 (同様の構造) -->
+  <div id="page11" style="display:none;">
+    <table>
+        <tr>
+          <td><center>音源1</center></td>
+          <td><center>音源2</center></td>
+        </tr>
+        <tr>
+          <td><audio id="audio11_1"controls>
+            <source src="drums/beat02.wav" type="audio/wav">
+        
+            Your browser does not support the audio element.
+          </audio></td>
+          <td><audio id="audio11_2"controls>
+            <source src="VQ/beat02.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio></td>
+        </tr>
+      </table><br>
+    
+        <fieldset id="question11"disabled>
+            <!-- [1]  -->
+            <b>①リズムの忠実性</b><br>
+            <input type="radio" name="q1" value=1>あり
+            <input type="radio" name="q1" value=0>なし
+            <br>
+            <textarea  name="text11_1" placeholder="自由記述欄（リズムの忠実性について）" rows="3" cols="100"></textarea><br><br>
+            
+            <!-- [2]  -->
+            <b>②音色の忠実性</b><br>
+            <input type="radio" name="q2" value=1>あり
+            <input type="radio" name="q2" value=0>なし
+            <br>
+            <textarea  name="text11_2" placeholder="自由記述欄（音色の忠実性について）" rows="3" cols="100"></textarea><br><br>
+    
+            <!-- [3]  -->
+            <b>③ボーカルパーカッションらしさ</b><br>
+            <input type="radio" name="q3" value=1>ボーカルパーカッションに近い
+            <input type="radio" name="q3" value=0>ドラムに近い
+            <br>
+            <textarea  name="text11_3" placeholder="自由記述欄（ボーカルパーカッションらしさについて）" rows="3" cols="100"></textarea><br>
+        </fieldset><br>
+        <div class="button">
+            <a type="button" id="nextPage11">次へ</a> <br>
+        </div>
+  </div>
+
+  <!-- Page 12 (同様の構造) -->
+  <div id="page12" style="display:none;">
+    <table>
+        <tr>
+          <td><center>音源1</center></td>
+          <td><center>音源2</center></td>
+        </tr>
+        <tr>
+          <td><audio id="audio12_1"controls>
+            <source src="drums/beat03.wav" type="audio/wav">
+        
+            Your browser does not support the audio element.
+          </audio></td>
+          <td><audio id="audio12_2"controls>
+            <source src="VQ/beat03.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio></td>
+        </tr>
+      </table><br>
+    
+        <fieldset id="question12"disabled>
+            <!-- [1]  -->
+            <b>①リズムの忠実性</b><br>
+            <input type="radio" name="q1" value=1>あり
+            <input type="radio" name="q1" value=0>なし
+            <br>
+            <textarea  name="text12_1" placeholder="自由記述欄（リズムの忠実性について）" rows="3" cols="100"></textarea><br><br>
+            
+            <!-- [2]  -->
+            <b>②音色の忠実性</b><br>
+            <input type="radio" name="q2" value=1>あり
+            <input type="radio" name="q2" value=0>なし
+            <br>
+            <textarea  name="text12_2" placeholder="自由記述欄（音色の忠実性について）" rows="3" cols="100"></textarea><br><br>
+    
+            <!-- [3]  -->
+            <b>③ボーカルパーカッションらしさ</b><br>
+            <input type="radio" name="q3" value=1>ボーカルパーカッションに近い
+            <input type="radio" name="q3" value=0>ドラムに近い
+            <br>
+            <textarea  name="text12_3" placeholder="自由記述欄（ボーカルパーカッションらしさについて）" rows="3" cols="100"></textarea><br>
+        </fieldset><br>
+        <div class="button">
+            <a type="button" id="nextPage12">次へ</a> <br>
+        </div>
+  </div>
+
+  <!-- Page 13 (同様の構造) -->
+  <div id="page13" style="display:none;">
+    <table>
+        <tr>
+          <td><center>音源1</center></td>
+          <td><center>音源2</center></td>
+        </tr>
+        <tr>
+          <td><audio id="audio13_1"controls>
+            <source src="drums/beat01_160.wav" type="audio/wav">
+        
+            Your browser does not support the audio element.
+          </audio></td>
+          <td><audio id="audio13_2"controls>
+            <source src="VQ/beat01_160.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio></td>
+        </tr>
+      </table><br>
+    
+        <fieldset id="question13"disabled>
+            <!-- [1]  -->
+            <b>①リズムの忠実性</b><br>
+            <input type="radio" name="q1" value=1>あり
+            <input type="radio" name="q1" value=0>なし
+            <br>
+            <textarea  name="text13_1" placeholder="自由記述欄（リズムの忠実性について）" rows="3" cols="100"></textarea><br><br>
+            
+            <!-- [2]  -->
+            <b>②音色の忠実性</b><br>
+            <input type="radio" name="q2" value=1>あり
+            <input type="radio" name="q2" value=0>なし
+            <br>
+            <textarea  name="text13_2" placeholder="自由記述欄（音色の忠実性について）" rows="3" cols="100"></textarea><br><br>
+    
+            <!-- [3]  -->
+            <b>③ボーカルパーカッションらしさ</b><br>
+            <input type="radio" name="q3" value=1>ボーカルパーカッションに近い
+            <input type="radio" name="q3" value=0>ドラムに近い
+            <br>
+            <textarea  name="text13_3" placeholder="自由記述欄（ボーカルパーカッションらしさについて）" rows="3" cols="100"></textarea><br>
+        </fieldset><br>
+        <div class="button">
+            <a type="button" id="nextPage13">次へ</a> <br>
+        </div>
+  </div>
+
+  <!-- Page 14 (同様の構造) -->
+  <div id="page14" style="display:none;">
+    <table>
+        <tr>
+          <td><center>音源1</center></td>
+          <td><center>音源2</center></td>
+        </tr>
+        <tr>
+          <td><audio id="audio14_1"controls>
+            <source src="drums/beat02_160.wav" type="audio/wav">
+        
+            Your browser does not support the audio element.
+          </audio></td>
+          <td><audio id="audio14_2"controls>
+            <source src="VQ/beat02_160.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio></td>
+        </tr>
+      </table><br>
+    
+        <fieldset id="question14"disabled>
+            <!-- [1]  -->
+            <b>①リズムの忠実性</b><br>
+            <input type="radio" name="q1" value=1>あり
+            <input type="radio" name="q1" value=0>なし
+            <br>
+            <textarea  name="text14_1" placeholder="自由記述欄（リズムの忠実性について）" rows="3" cols="100"></textarea><br><br>
+            
+            <!-- [2]  -->
+            <b>②音色の忠実性</b><br>
+            <input type="radio" name="q2" value=1>あり
+            <input type="radio" name="q2" value=0>なし
+            <br>
+            <textarea  name="text14_2" placeholder="自由記述欄（音色の忠実性について）" rows="3" cols="100"></textarea><br><br>
+    
+            <!-- [3]  -->
+            <b>③ボーカルパーカッションらしさ</b><br>
+            <input type="radio" name="q3" value=1>ボーカルパーカッションに近い
+            <input type="radio" name="q3" value=0>ドラムに近い
+            <br>
+            <textarea  name="text14_3" placeholder="自由記述欄（ボーカルパーカッションらしさについて）" rows="3" cols="100"></textarea><br>
+        </fieldset><br>
+        <div class="button">
+            <a type="button" id="nextPage14">次へ</a> <br>
+        </div>
+  </div>
+
+  <!-- Page 15 (同様の構造) -->
+  <div id="page15" style="display:none;">
+    <table>
+        <tr>
+          <td><center>音源1</center></td>
+          <td><center>音源2</center></td>
+        </tr>
+        <tr>
+          <td><audio id="audio15_1"controls>
+            <source src="drums/beat03_160.wav" type="audio/wav">
+        
+            Your browser does not support the audio element.
+          </audio></td>
+          <td><audio id="audio15_2"controls>
+            <source src="VQ/beat03_160.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio></td>
+        </tr>
+      </table><br>
+    
+        <fieldset id="question15"disabled>
+            <!-- [1]  -->
+            <b>①リズムの忠実性</b><br>
+            <input type="radio" name="q1" value=1>あり
+            <input type="radio" name="q1" value=0>なし
+            <br>
+            <textarea  name="text15_1" placeholder="自由記述欄（リズムの忠実性について）" rows="3" cols="100"></textarea><br><br>
+            
+            <!-- [2]  -->
+            <b>②音色の忠実性</b><br>
+            <input type="radio" name="q2" value=1>あり
+            <input type="radio" name="q2" value=0>なし
+            <br>
+            <textarea  name="text15_2" placeholder="自由記述欄（音色の忠実性について）" rows="3" cols="100"></textarea><br><br>
+    
+            <!-- [3]  -->
+            <b>③ボーカルパーカッションらしさ</b><br>
+            <input type="radio" name="q3" value=1>ボーカルパーカッションに近い
+            <input type="radio" name="q3" value=0>ドラムに近い
+            <br>
+            <textarea  name="text15_3" placeholder="自由記述欄（ボーカルパーカッションらしさについて）" rows="3" cols="100"></textarea><br>
+        </fieldset><br>
+        <div class="button">
+            <a type="button" id="nextPage15">次へ</a> <br>
+        </div>
+  </div>
+
+  <!-- Page 16 (同様の構造) -->
+  <div id="page16" style="display:none;">
+    <table>
+        <tr>
+          <td><center>音源1</center></td>
+          <td><center>音源2</center></td>
+        </tr>
+        <tr>
+          <td><audio id="audio16_1"controls>
+            <source src="drums/beat01_80.wav" type="audio/wav">
+        
+            Your browser does not support the audio element.
+          </audio></td>
+          <td><audio id="audio16_2"controls>
+            <source src="VQ/beat01_80.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio></td>
+        </tr>
+      </table><br>
+    
+        <fieldset id="question16"disabled>
+            <!-- [1]  -->
+            <b>①リズムの忠実性</b><br>
+            <input type="radio" name="q1" value=1>あり
+            <input type="radio" name="q1" value=0>なし
+            <br>
+            <textarea  name="text16_1" placeholder="自由記述欄（リズムの忠実性について）" rows="3" cols="100"></textarea><br><br>
+            
+            <!-- [2]  -->
+            <b>②音色の忠実性</b><br>
+            <input type="radio" name="q2" value=1>あり
+            <input type="radio" name="q2" value=0>なし
+            <br>
+            <textarea  name="text16_2" placeholder="自由記述欄（音色の忠実性について）" rows="3" cols="100"></textarea><br><br>
+    
+            <!-- [3]  -->
+            <b>③ボーカルパーカッションらしさ</b><br>
+            <input type="radio" name="q3" value=1>ボーカルパーカッションに近い
+            <input type="radio" name="q3" value=0>ドラムに近い
+            <br>
+            <textarea  name="text16_3" placeholder="自由記述欄（ボーカルパーカッションらしさについて）" rows="3" cols="100"></textarea><br>
+        </fieldset><br>
+        <div class="button">
+            <a type="button" id="nextPage16">次へ</a> <br>
+        </div>
+  </div>
+
+  <!-- Page 17 (同様の構造) -->
+  <div id="page17" style="display:none;">
+    <table>
+        <tr>
+          <td><center>音源1</center></td>
+          <td><center>音源2</center></td>
+        </tr>
+        <tr>
+          <td><audio id="audio17_1"controls>
+            <source src="drums/beat02_80.wav" type="audio/wav">
+        
+            Your browser does not support the audio element.
+          </audio></td>
+          <td><audio id="audio17_2"controls>
+            <source src="VQ/beat02_80.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio></td>
+        </tr>
+      </table><br>
+    
+        <fieldset id="question17"disabled>
+            <!-- [1]  -->
+            <b>①リズムの忠実性</b><br>
+            <input type="radio" name="q1" value=1>あり
+            <input type="radio" name="q1" value=0>なし
+            <br>
+            <textarea  name="text17_1" placeholder="自由記述欄（リズムの忠実性について）" rows="3" cols="100"></textarea><br><br>
+            
+            <!-- [2]  -->
+            <b>②音色の忠実性</b><br>
+            <input type="radio" name="q2" value=1>あり
+            <input type="radio" name="q2" value=0>なし
+            <br>
+            <textarea  name="text17_2" placeholder="自由記述欄（音色の忠実性について）" rows="3" cols="100"></textarea><br><br>
+    
+            <!-- [3]  -->
+            <b>③ボーカルパーカッションらしさ</b><br>
+            <input type="radio" name="q3" value=1>ボーカルパーカッションに近い
+            <input type="radio" name="q3" value=0>ドラムに近い
+            <br>
+            <textarea  name="text17_3" placeholder="自由記述欄（ボーカルパーカッションらしさについて）" rows="3" cols="100"></textarea><br>
+        </fieldset><br>
+        <div class="button">
+            <a type="button" id="nextPage17">次へ</a> <br>
+        </div>
+  </div>
+
+    <!-- Page 18 (同様の構造) -->
+    <div id="page18" style="display:none;">
+      <table>
+          <tr>
+            <td><center>音源1</center></td>
+            <td><center>音源2</center></td>
+          </tr>
+          <tr>
+            <td><audio id="audio18_1"controls>
+              <source src="drums/beat03_80.wav" type="audio/wav">
+          
+              Your browser does not support the audio element.
+            </audio></td>
+            <td><audio id="audio18_2"controls>
+              <source src="VQ/beat03_80.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio></td>
+          </tr>
+        </table><br>
+      
+          <fieldset id="question18"disabled>
+              <!-- [1]  -->
+              <b>①リズムの忠実性</b><br>
+              <input type="radio" name="q1" value=1>あり
+              <input type="radio" name="q1" value=0>なし
+              <br>
+              <textarea  name="text18_1" placeholder="自由記述欄（リズムの忠実性について）" rows="3" cols="100"></textarea><br><br>
+              
+              <!-- [2]  -->
+              <b>②音色の忠実性</b><br>
+              <input type="radio" name="q2" value=1>あり
+              <input type="radio" name="q2" value=0>なし
+              <br>
+              <textarea  name="text18_2" placeholder="自由記述欄（音色の忠実性について）" rows="3" cols="100"></textarea><br><br>
+      
+              <!-- [3]  -->
+              <b>③ボーカルパーカッションらしさ</b><br>
+              <input type="radio" name="q3" value=1>ボーカルパーカッションに近い
+              <input type="radio" name="q3" value=0>ドラムに近い
+              <br>
+              <textarea  name="text18_3" placeholder="自由記述欄（ボーカルパーカッションらしさについて）" rows="3" cols="100"></textarea><br>
+          </fieldset><br>
+          <div class="button">
+              <a type="button" id="submit">送信</a> <br>
+          </div>
+      </form>
+    </div>
+
+  <script>
+// ページのIDやクラスを配列で管理
+const pages = ["page1", "page2", "page3","page4","page5","page6","page7","page8","page9","page10","page11","page12","page13","page14","page15","page16","page17"];  // ページの要素IDをリストにしておく
+const lastPage = "page18";           // 最後に表示するページ
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+// ページ順序をシャッフル
+shuffleArray(pages);
+
+// 最後のページを順序の最後に追加
+pages.push(lastPage);
+
+let currentPageIndex = 0;
+
+function showPage(index) {
+    // 全ページを非表示
+    pages.forEach(pageId => document.getElementById(pageId).style.display = "none");
+
+    // 現在のページを表示
+    document.getElementById(pages[index]).style.display = "block";
+}
+
+showPage(currentPageIndex);
+
+let surveyData = {
+  page1: {},
+  page2: {},
+  page3: {},
+  page4: {},
+  page5: {},
+  page6: {},
+  page7: {},
+  page8: {},
+  page9: {},
+  page10: {},
+  page11: {},
+  page12: {},
+  page13: {},
+  page14: {},
+  page15: {},
+  page16: {},
+  page17: {},
+  page18: {}
+};
+
+// ページ1の送信ボタン
+document.getElementById("nextPage1").addEventListener("click", function() {
+  // ページ1の回答を収集
+  surveyData.page1 = {
+    q1: document.querySelector('input[name="q1"]:checked').value,
+    text1: document.querySelector('textarea[name="text1_1"]').value,
+    q2: document.querySelector('input[name="q2"]:checked').value,
+    text2: document.querySelector('textarea[name="text1_2"]').value,
+    q3: document.querySelector('input[name="q3"]:checked').value,
+    text3: document.querySelector('textarea[name="text1_3"]').value
+  };
+
+  // ページ1を非表示、ページ2を表示
+  if (currentPageIndex < pages.length - 1) {
+        currentPageIndex++;
+        showPage(currentPageIndex);
+  }
+});
+
+// ページ2の送信ボタン
+document.getElementById("nextPage2").addEventListener("click", function() {
+  // ページ2の回答を収集
+  surveyData.page2 = {
+    q1: document.querySelector('input[name="q1"]:checked').value,
+    text1: document.querySelector('textarea[name="text2_1"]').value,
+    q2: document.querySelector('input[name="q2"]:checked').value,
+    text2: document.querySelector('textarea[name="text2_2"]').value,
+    q3: document.querySelector('input[name="q3"]:checked').value,
+    text3: document.querySelector('textarea[name="text2_3"]').value
+  };
+
+  if (currentPageIndex < pages.length - 1) {
+        currentPageIndex++;
+        showPage(currentPageIndex);
+  }
+
+});
+
+// ページ3の送信ボタン
+document.getElementById("nextPage3").addEventListener("click", function() {
+  // ページ3の回答を収集
+  surveyData.page3 = {
+    q1: document.querySelector('input[name="q1"]:checked').value,
+    text1: document.querySelector('textarea[name="text2_1"]').value,
+    q2: document.querySelector('input[name="q2"]:checked').value,
+    text2: document.querySelector('textarea[name="text2_2"]').value,
+    q3: document.querySelector('input[name="q3"]:checked').value,
+    text3: document.querySelector('textarea[name="text3_3"]').value
+  };
+
+  if (currentPageIndex < pages.length - 1) {
+        currentPageIndex++;
+        showPage(currentPageIndex);
+  }
+
+});
+
+// ページ4の送信ボタン
+document.getElementById("nextPage4").addEventListener("click", function() {
+  // ページ4の回答を収集
+  surveyData.page4 = {
+    q1: document.querySelector('input[name="q1"]:checked').value,
+    text1: document.querySelector('textarea[name="text2_1"]').value,
+    q2: document.querySelector('input[name="q2"]:checked').value,
+    text2: document.querySelector('textarea[name="text2_2"]').value,
+    q3: document.querySelector('input[name="q3"]:checked').value,
+    text3: document.querySelector('textarea[name="text4_3"]').value
+  };
+
+  if (currentPageIndex < pages.length - 1) {
+        currentPageIndex++;
+        showPage(currentPageIndex);
+  }
+
+});
+
+// ページ5の送信ボタン
+document.getElementById("nextPage5").addEventListener("click", function() {
+  // ページ5の回答を収集
+  surveyData.page5 = {
+    q1: document.querySelector('input[name="q1"]:checked').value,
+    text1: document.querySelector('textarea[name="text2_1"]').value,
+    q2: document.querySelector('input[name="q2"]:checked').value,
+    text2: document.querySelector('textarea[name="text2_2"]').value,
+    q3: document.querySelector('input[name="q3"]:checked').value,
+    text3: document.querySelector('textarea[name="text5_3"]').value
+  };
+
+  if (currentPageIndex < pages.length - 1) {
+        currentPageIndex++;
+        showPage(currentPageIndex);
+  }
+
+});
+
+// ページ6の送信ボタン
+document.getElementById("nextPage6").addEventListener("click", function() {
+  // ページ6の回答を収集
+  surveyData.page6 = {
+    q1: document.querySelector('input[name="q1"]:checked').value,
+    text1: document.querySelector('textarea[name="text2_1"]').value,
+    q2: document.querySelector('input[name="q2"]:checked').value,
+    text2: document.querySelector('textarea[name="text2_2"]').value,
+    q3: document.querySelector('input[name="q3"]:checked').value,
+    text3: document.querySelector('textarea[name="text6_3"]').value
+  };
+
+  if (currentPageIndex < pages.length - 1) {
+        currentPageIndex++;
+        showPage(currentPageIndex);
+  }
+
+});
+
+// ページ7の送信ボタン
+document.getElementById("nextPage7").addEventListener("click", function() {
+  // ページ7の回答を収集
+  surveyData.page7 = {
+    q1: document.querySelector('input[name="q1"]:checked').value,
+    text1: document.querySelector('textarea[name="text2_1"]').value,
+    q2: document.querySelector('input[name="q2"]:checked').value,
+    text2: document.querySelector('textarea[name="text2_2"]').value,
+    q3: document.querySelector('input[name="q3"]:checked').value,
+    text3: document.querySelector('textarea[name="text7_3"]').value
+  };
+
+  if (currentPageIndex < pages.length - 1) {
+        currentPageIndex++;
+        showPage(currentPageIndex);
+  }
+
+});
+
+// ページ8の送信ボタン
+document.getElementById("nextPage8").addEventListener("click", function() {
+  // ページ8の回答を収集
+  surveyData.page8 = {
+    q1: document.querySelector('input[name="q1"]:checked').value,
+    text1: document.querySelector('textarea[name="text2_1"]').value,
+    q2: document.querySelector('input[name="q2"]:checked').value,
+    text2: document.querySelector('textarea[name="text2_2"]').value,
+    q3: document.querySelector('input[name="q3"]:checked').value,
+    text3: document.querySelector('textarea[name="text8_3"]').value
+  };
+
+  if (currentPageIndex < pages.length - 1) {
+        currentPageIndex++;
+        showPage(currentPageIndex);
+  }
+
+});
+
+// ページ9の送信ボタン
+document.getElementById("nextPage9").addEventListener("click", function() {
+  // ページ9の回答を収集
+  surveyData.page9 = {
+    q1: document.querySelector('input[name="q1"]:checked').value,
+    text1: document.querySelector('textarea[name="text2_1"]').value,
+    q2: document.querySelector('input[name="q2"]:checked').value,
+    text2: document.querySelector('textarea[name="text2_2"]').value,
+    q3: document.querySelector('input[name="q3"]:checked').value,
+    text3: document.querySelector('textarea[name="text9_3"]').value
+  };
+
+  if (currentPageIndex < pages.length - 1) {
+        currentPageIndex++;
+        showPage(currentPageIndex);
+  }
+
+
+});
+
+// ページ10の送信ボタン
+document.getElementById("nextPage10").addEventListener("click", function() {
+  // ページ10の回答を収集
+  surveyData.page10 = {
+    q1: document.querySelector('input[name="q1"]:checked').value,
+    text1: document.querySelector('textarea[name="text2_1"]').value,
+    q2: document.querySelector('input[name="q2"]:checked').value,
+    text2: document.querySelector('textarea[name="text2_2"]').value,
+    q3: document.querySelector('input[name="q3"]:checked').value,
+    text3: document.querySelector('textarea[name="text10_3"]').value
+  };
+
+  if (currentPageIndex < pages.length - 1) {
+        currentPageIndex++;
+        showPage(currentPageIndex);
+  }
+
+});
+
+// ページ11の送信ボタン
+document.getElementById("nextPage11").addEventListener("click", function() {
+  // ページ11の回答を収集
+  surveyData.page11 = {
+    q1: document.querySelector('input[name="q1"]:checked').value,
+    text1: document.querySelector('textarea[name="text2_1"]').value,
+    q2: document.querySelector('input[name="q2"]:checked').value,
+    text2: document.querySelector('textarea[name="text2_2"]').value,
+    q3: document.querySelector('input[name="q3"]:checked').value,
+    text3: document.querySelector('textarea[name="text11_3"]').value
+  };
+
+  if (currentPageIndex < pages.length - 1) {
+        currentPageIndex++;
+        showPage(currentPageIndex);
+  }
+
+
+});
+
+// ページ12の送信ボタン
+document.getElementById("nextPage12").addEventListener("click", function() {
+  // ページ12の回答を収集
+  surveyData.page12 = {
+    q1: document.querySelector('input[name="q1"]:checked').value,
+    text1: document.querySelector('textarea[name="text2_1"]').value,
+    q2: document.querySelector('input[name="q2"]:checked').value,
+    text2: document.querySelector('textarea[name="text2_2"]').value,
+    q3: document.querySelector('input[name="q3"]:checked').value,
+    text3: document.querySelector('textarea[name="text12_3"]').value
+  };
+
+  if (currentPageIndex < pages.length - 1) {
+        currentPageIndex++;
+        showPage(currentPageIndex);
+  }
+
+
+});
+
+// ページ13の送信ボタン
+document.getElementById("nextPage13").addEventListener("click", function() {
+  // ページ13の回答を収集
+  surveyData.page13 = {
+    q1: document.querySelector('input[name="q1"]:checked').value,
+    text1: document.querySelector('textarea[name="text2_1"]').value,
+    q2: document.querySelector('input[name="q2"]:checked').value,
+    text2: document.querySelector('textarea[name="text2_2"]').value,
+    q3: document.querySelector('input[name="q3"]:checked').value,
+    text3: document.querySelector('textarea[name="text13_3"]').value
+  };
+
+  if (currentPageIndex < pages.length - 1) {
+        currentPageIndex++;
+        showPage(currentPageIndex);
+  }
+
+});
+
+// ページ14の送信ボタン
+document.getElementById("nextPage14").addEventListener("click", function() {
+  // ページ14の回答を収集
+  surveyData.page14 = {
+    q1: document.querySelector('input[name="q1"]:checked').value,
+    text1: document.querySelector('textarea[name="text2_1"]').value,
+    q2: document.querySelector('input[name="q2"]:checked').value,
+    text2: document.querySelector('textarea[name="text2_2"]').value,
+    q3: document.querySelector('input[name="q3"]:checked').value,
+    text3: document.querySelector('textarea[name="text14_3"]').value
+  };
+
+  if (currentPageIndex < pages.length - 1) {
+        currentPageIndex++;
+        showPage(currentPageIndex);
+  }
+
+});
+
+// ページ15の送信ボタン
+document.getElementById("nextPage15").addEventListener("click", function() {
+  // ページ15の回答を収集
+  surveyData.page15 = {
+    q1: document.querySelector('input[name="q1"]:checked').value,
+    text1: document.querySelector('textarea[name="text2_1"]').value,
+    q2: document.querySelector('input[name="q2"]:checked').value,
+    text2: document.querySelector('textarea[name="text2_2"]').value,
+    q3: document.querySelector('input[name="q3"]:checked').value,
+    text3: document.querySelector('textarea[name="text15_3"]').value
+  };
+
+  if (currentPageIndex < pages.length - 1) {
+        currentPageIndex++;
+        showPage(currentPageIndex);
+  }
+
+});
+
+// ページ16の送信ボタン
+document.getElementById("nextPage16").addEventListener("click", function() {
+  // ページ16の回答を収集
+  surveyData.page16 = {
+    q1: document.querySelector('input[name="q1"]:checked').value,
+    text1: document.querySelector('textarea[name="text2_1"]').value,
+    q2: document.querySelector('input[name="q2"]:checked').value,
+    text2: document.querySelector('textarea[name="text2_2"]').value,
+    q3: document.querySelector('input[name="q3"]:checked').value,
+    text3: document.querySelector('textarea[name="text16_3"]').value
+  };
+
+  if (currentPageIndex < pages.length - 1) {
+        currentPageIndex++;
+        showPage(currentPageIndex);
+  }
+
+});
+
+// ページ17の送信ボタン
+document.getElementById("nextPage17").addEventListener("click", function() {
+  // ページ17の回答を収集
+  surveyData.page17 = {
+    q1: document.querySelector('input[name="q1"]:checked').value,
+    text1: document.querySelector('textarea[name="text2_1"]').value,
+    q2: document.querySelector('input[name="q2"]:checked').value,
+    text2: document.querySelector('textarea[name="text2_2"]').value,
+    q3: document.querySelector('input[name="q3"]:checked').value,
+    text3: document.querySelector('textarea[name="text17_3"]').value
+  };
+
+  if (currentPageIndex < pages.length - 1) {
+        currentPageIndex++;
+        showPage(currentPageIndex);
+  }
+});
+
+// 送信ボタン（ページ18）
+document.getElementById("submit").addEventListener("click", function() {
+  // 送信ボタンを無効化
+  const submitButton = document.querySelector('#submit');
+    submitButton.disabled = true;
+
+  // ページ18の回答を収集
+  surveyData.page18 = {
+    q1: document.querySelector('input[name="q1"]:checked').value,
+    text1: document.querySelector('textarea[name="text2_1"]').value,
+    q2: document.querySelector('input[name="q2"]:checked').value,
+    text2: document.querySelector('textarea[name="text2_2"]').value,
+    q3: document.querySelector('input[name="q3"]:checked').value,
+    text3: document.querySelector('textarea[name="text18_3"]').value
+  };
+
+  function generateRandomID() {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let randomID = '';
+    for (let i = 0; i < 16; i++) {
+        randomID += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return randomID;
+}
+
+  // ランダムIDを生成
+  const randomID = generateRandomID();
+
+  // すべてのページの回答をFireStoreに保存
+  const answers = {
+    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    userID: randomID,
+    ...surveyData  // page1, page2, page3をまとめて送信
+  };
+  const db = firebase.firestore()
+  // Firebaseにデータを保存
+    db.collection("Evaluation").doc(randomID).set(answers)
+    .then(() => {
+      alert(`回答が送信されました！\nあなたのID: ${randomID}\nこのIDをコピーして、Googleフォーム入力に進んでください。`);
+      document.getElementById("surveyForm").reset();
+    })
+    .catch((error) => {
+      console.error("送信エラー:", error);
+      alert('送信中にエラーが発生しました。もう一度お試しください。');
+      // エラー時にはボタンを再び有効化
+      submitButton.disabled = false;
+    });
+});
+
+
+
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
+
